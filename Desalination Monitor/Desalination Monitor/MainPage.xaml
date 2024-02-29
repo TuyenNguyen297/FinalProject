@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Desalination.MainPage">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css" />
+    </ContentPage.Resources>
+
+    <!--STATUS BAR-->
+    <StackLayout BackgroundColor="Black">
+        <Frame x:Name="Panel" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="Black" HorizontalOptions="Fill">
+            <Grid RowSpacing="0" StyleClass="sttBar" ColumnSpacing="0" Margin="0" Padding="0" VerticalOptions="Fill" HorizontalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="wifiImg" StyleClass="Img" Source="" WidthRequest="36" HeightRequest="36" Margin="2,2,2,0" />
+                <Label Grid.Column="1" Text="ĐIỆN THOẠI" VerticalTextAlignment="Center" VerticalOptions="Center" />
+                <Label Grid.Column="2" Text=" MÁY LỌC  " VerticalTextAlignment="Center" VerticalOptions="Center" />
+                <Image Grid.Column="3" x:Name="espImg" StyleClass="Img" Source="" WidthRequest="36" HeightRequest="36" Margin="2,2,2,0" />
+            </Grid>
+        </Frame>
+
+        <!--HIỂN THỊ THÔNG SỐ VÀ BUTTON-->
+        <Frame Margin="0,0,0,0" Padding="0" BackgroundColor="Transparent" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <Grid RowSpacing="1" ColumnSpacing="0" Margin="0" Padding="0" VerticalOptions="Fill" HorizontalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView StyleClass="boxView" HorizontalOptions="FillAndExpand" />
+                <Label StyleClass="Title" Text="Trạng thái" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Column="1" x:Name="Status" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+
+                <!--<BoxView Grid.Row="1" StyleClass="boxView" HorizontalOptions="FillAndExpand" Color="LightSkyBlue" />
+                <Label Grid.Row="1" Text="Lưu lượng (l/m)" StyleClass="Title" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="FlowRate" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />-->
+
+                <BoxView Grid.Row="1" StyleClass="boxView" HorizontalOptions="FillAndExpand" Color="LightSkyBlue" />
+                <Label Grid.Row="1" StyleClass="Title" Text="Thể tích (l)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="Volume" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+
+                <BoxView Grid.Row="2" StyleClass="boxView" HorizontalOptions="FillAndExpand" Color="LightSkyBlue" />
+                <Label Grid.Row="2" StyleClass="Title" Text="TDS (ppm)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Row="2" Grid.Column="1" x:Name="TDS" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+
+                <BoxView Grid.Row="3" StyleClass="boxView" HorizontalOptions="FillAndExpand" Color="LightSkyBlue" />
+                <Label Grid.Row="3" StyleClass="Title" Text="Độ mặn (%)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Row="3" Grid.Column="1" x:Name="Salinity" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+
+                <BoxView Grid.Row="4" StyleClass="boxView" HorizontalOptions="FillAndExpand" Color="LightSkyBlue" />
+                <Label Grid.Row="4" StyleClass="Title" Text="Chất lượng" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                <Label Grid.Row="4" Grid.Column="1" x:Name="Quality" StyleClass="Value" Text="" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+
+            </Grid>
+        </Frame>
+
+        <StackLayout Spacing="0">
+            <Button StyleClass="cmdbtn" x:Name="CMDbtn" HorizontalOptions="Fill" Clicked="btn_Click" />
+            <!--<Button StyleClass="cmdbtn" x:Name="Add1btn" HorizontalOptions="Fill" Clicked="Btn1_Click" />
+            <Button StyleClass="cmdbtn" x:Name="Add2btn" HorizontalOptions="Fill" Clicked="Btn2_Click" />-->
+        </StackLayout>
+        
+    </StackLayout>
+</ContentPage>
+<!--<StackLayout Spacing="0" Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout StyleClass="sttBar" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="0">
+                <StackLayout x:Name="txImg" StyleClass="Img" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image x:Name="wifiImg" StyleClass="Img" Source="" WidthRequest="36" HeightRequest="36" Margin="2,2,2,0" />
+                </StackLayout>
+                <Label Text="ĐIỆN THOẠI" VerticalTextAlignment="Center" VerticalOptions="Center" />
+                <Label Text=" MÁY LỌC  " VerticalTextAlignment="Center" VerticalOptions="Center" />
+                <StackLayout x:Name="rxImg" StyleClass="Img" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image x:Name="espImg" StyleClass="Img" Source="" WidthRequest="36" HeightRequest="36" Margin="2,2,2,0" />
+                </StackLayout>
+            </StackLayout>
+
+            -->
+<!--<StackLayout StyleClass="DATN" HorizontalOptions="FillAndExpand" Spacing="0">
+                    <Label Text="FINAL THESIS" HorizontalTextAlignment="Center" FontSize="20" FontAttributes="Bold" TextColor="CornflowerBlue" />
+                    <Label Text="DESALINATION MONITORING" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="24" TextColor="CornflowerBlue" Padding="0,0,0,5" />
+         </StackLayout>-->
+<!--
+        </StackLayout>-->
+
+<!--<Frame Margin="0,5" Padding="0" BackgroundColor="Transparent" CornerRadius="10" VerticalOptions="FillAndExpand">
+            <Grid RowSpacing="5" ColumnSpacing="5" VerticalOptions="Fill" HorizontalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Frame StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0">
+                        <Label StyleClass="Title" Text="TDS (ppm)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="TDS" StyleClass="Value" Text="x" Grid.Column="1" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+                -->
+<!--<BoxView StyleClass="boxView" Color="PowderBlue" />-->
+<!--
+                <Frame Grid.Column="1" StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0">
+                        <Label Grid.Column="1"  Text="Quality" StyleClass="Title" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="Quality" StyleClass="Value" Text="x" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+                -->
+<!--<BoxView StyleClass="boxView" Grid.Column="2" Color="CadetBlue" />-->
+<!--
+                <Frame Grid.Column="2" StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0" >
+                        <Label Grid.Column="2" StyleClass="Title" Text="Salinity (%)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="Salinity" StyleClass="Value" Text="x" Grid.Column="2" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+                -->
+<!--<BoxView StyleClass="boxView" Grid.Row="1" Color="CornflowerBlue" />-->
+<!--
+                <Frame Grid.Row="1" StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0">
+                        <Label Grid.Row="1" StyleClass="Title" Text="FlowRate (lpm)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="FlowRate" StyleClass="Value" Text="x" Grid.Row="1" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+                -->
+<!--<BoxView StyleClass="boxView" Grid.Row="1" Grid.Column="1" Color="White" />-->
+<!--
+                <Frame Grid.Row="1" Grid.Column="1" StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0">
+                        <Label Grid.Row="1" StyleClass="Title" Grid.Column="1" Text="State" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="State" StyleClass="Value" Text="x" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+                -->
+<!--<BoxView StyleClass="boxView" Grid.Row="1" Grid.Column="2" Color="PaleTurquoise" />-->
+<!--
+                <Frame Grid.Row="1" Grid.Column="2" StyleClass="boxView" Padding="0">
+                    <StackLayout Spacing="0">
+                        <Label Grid.Row="1" StyleClass="Title" Grid.Column="2" Text="Volume (l)" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        <Label x:Name="Volume" StyleClass="Value" Text="x" Grid.Row="1" Grid.Column="2" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Frame>-->
+
+<!--<StackLayout>
+            <Button BackgroundColor="Black" x:Name="DatabaseAdding" Text="Add to Database" Clicked="DB_Clicked" />
+        </StackLayout>-->

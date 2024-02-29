@@ -1,0 +1,67 @@
+﻿.sttBar
+{	
+	width: 372;
+	height: 40;
+	background-color:black;
+}
+.sttBar label
+{
+	/*width:138;*/
+	font-size:21;
+	color: aquamarine;
+	text-align:center;
+
+}
+.Img
+{
+	width:50;
+
+}
+
+.DATN label
+{
+	background-color: white;
+}
+
+.boxView
+{
+	border-radius:15;
+	margin:0;
+	padding:0;
+}
+
+.Title
+{
+	background-color: #45B6FE;
+	/*background-color: #A8A7A7;*/
+	color:white;
+	font-size: 21;
+	font-family: Comfortaa; 
+	font-style: bold;
+	padding-bottom:5;
+	vertical-align: middle;
+	margin:0;
+	/*CornflowerBlue*/
+}
+
+.Value
+{
+	font-size:43 ;
+	padding-bottom:9;
+	font-family: Comfortaa;
+	background-color: White;
+	margin:0;
+}
+
+.cmdbtn
+{
+	background-color:white;
+	font-size:35;
+	font-style:normal;
+	border-radius:10;
+	font-family: Comfortaa;
+	height:65.5;
+	text-align:center;
+	opacity:1;
+	padding-bottom:5;
+}
